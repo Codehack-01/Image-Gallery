@@ -7,14 +7,14 @@ const ImageCard = ({image}) => {
       <div className='relative overflow-hidden group '>
         <img src={image.webformatURL} alt="card-img" className='w-full' />
         <div className='absolute h-full w-full bg-black/30 flex -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer'>
-          <div className='px-6 py-4'>
-            {<div className='flex justify-between  '>
+          <div className='px-6 py-4 w-full h-full flex flex-col justify-between'>
+            {<div className='flex justify-between w-full '>
               <div className='font-bold text-gray-300 text-sm md:text-base mb-2'>Photo by @{image.user}</div>
               <div className='text-gray-300 text-sm md:text-base'>Views: {image.views}</div>
             </div>}
-            <div className='flex justify-between self-end'>
-              <div><img src=".../assets/icons/download.svg" alt="" />{image.downloads}</div>
-              <div>{image.likes}</div>
+            <div className='flex flex-row justify-between self-end w-full items-center text-gray-300'>
+              <div><img src="src/assets/icons/download.svg" className='w-[20px] h-[20px] md:w-[22px] md:h-[22px]' alt="" />{}</div>
+              <div><img src="src/assets/icons/likes.svg" className='w-[20px] h-[20px] md:w-[22px] md:h-[22px]'  alt="" /></div>
             </div>
             
             {/* <ul>

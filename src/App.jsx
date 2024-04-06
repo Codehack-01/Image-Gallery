@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ImageCard from './components/ImageCard';
 import ImageSearch from './components/ImageSearch';
+import NavBar from './components/NavBar';
 
 function App() {
   const [images, setImages] = useState([]);
@@ -30,16 +31,18 @@ function App() {
   }, [term]);
 
   return (
-    <div className="container mx-auto ">
-      <ImageSearch searchText={(text) => setTerm(text)}/>
-
-      {!isLoading && images.length === 0 && <h1 className='text-5xl text-center mx-auto mt-32'>No Images Found</h1>}
-
-      {isLoading ? <h1 className='text-6xl text-center mx-auto mt-32'>Loading...</h1> : <div className="columns-1 gap-0 lg:gap-0 sm:columns-2 lg:columns-3  [&>img:not(:first-child)]:mt-5 lg:[&>img:not(:first-child)]:mt-8">
-        {images.map(image => (
+    <div className="w-full ">
+      <NavBar/>
+      <div className='container md:mx-auto'>
+        <ImageSearch searchText={(text) => setTerm(text)}/>
+        {!isLoading && images.length === 0 && <h1 className='text-2xl md:text-5xl text-center mx-auto mt-32'>No Images Found</h1>}
+        {isLoading ? <h1 className='text-2xl md:text-6xl text-center mx-auto mt-32'>Loading...</h1> : <div className="columns-1 gap-0 lg:gap-0 sm:columns-2 lg:columns-3  [&>img:not(:first-child)]:mt-5 lg:[&>img:not(:first-child)]:mt-8">
+          {images.map(image => (
           <ImageCard key={image.id} image={image}/>
         ))}
-      </div>}
+        </div>}
+      </div>
+      
     </div>
   )
 }
