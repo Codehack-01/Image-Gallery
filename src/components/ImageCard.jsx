@@ -1,4 +1,5 @@
 import React from 'react';
+import {download, like} from '../assets';
 
 const ImageCard = ({image}) => {
   const tags = image.tags.split(','); 
@@ -13,8 +14,8 @@ const ImageCard = ({image}) => {
               <div className='text-gray-300 text-sm md:text-base'>Views: {image.views}</div>
             </div>}
             <div className='flex flex-row justify-between self-end w-full items-center text-gray-300'>
-              <div><img src="src/assets/icons/download.svg" className='w-[20px] h-[20px] md:w-[22px] md:h-[22px]' alt="" />{}</div>
-              <div><img src="src/assets/icons/likes.svg" className='w-[20px] h-[20px] md:w-[22px] md:h-[22px]'  alt="" /></div>
+              <div><img src={download} className='w-[20px] h-[20px] md:w-[22px] md:h-[22px]' alt="" />{}</div>
+              <div><img src={like} className='w-[20px] h-[20px] md:w-[22px] md:h-[22px]'  alt="" /></div>
             </div>
             
             {/* <ul>
